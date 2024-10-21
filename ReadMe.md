@@ -7,6 +7,12 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple)
 
+---
+
+**⚠️ **_Notice:_** This project is outdated and has not been maintained recently. For more details or inquiries, please [contact me](https://www.linkedin.com/in/cretu-fabian/).**
+
+---
+
 ## 📋 Table of Contents
 
 - [Introduction](#introduction)
@@ -16,11 +22,14 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
 
 ## Introduction
 
 The **Full-Stack Medical Record Management System** is a comprehensive web application designed to digitally scan, organize, and manage medical records efficiently. By converting physical documents into digital format, the system ensures that medical records are easily accessible, securely stored, and systematically organized.
+
+## 🚀 **Demo**
+
+Curious to see it in action? **[Scroll down to the end of this post](#)** to explore the demo!
 
 ## Features
 
@@ -57,80 +66,81 @@ Follow these steps to set up the project locally:
 
 1. **Clone the Repository**
 
-   ```bash
-   git clone https://github.com/yourusername/medical-record.git
-   cd medical-record
+    ```bash
+    git clone https://github.com/yourusername/medical-record.git
+    cd medical-record
     ```
-Create a Virtual Environment
 
-```bash
+2. **Create a Virtual Environment**
 
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-Install Dependencies
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
-```bash
+3. **Install Dependencies**
 
-pip install -r requirements.txt
-```
-Configure the Database
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-    Ensure MySQL is installed and running.
-    Create a database for the project.
-    Update the settings.py file with your database credentials.
+4. **Configure the Database**
 
-Apply Migrations
+    - Ensure MySQL is installed and running.
+    - Create a database for the project.
+    - Update the `settings.py` file with your database credentials.
 
-```bash
+5. **Apply Migrations**
 
-python manage.py migrate
-```
-Run the Development Server
+    ```bash
+    python manage.py migrate
+    ```
 
-```bash
+6. **Run the Development Server**
 
+    ```bash
     python manage.py runserver
-```
-    Access the Application
+    ```
 
-    Open your browser and navigate to http://localhost:8000.
+7. **Access the Application**
 
-Usage
+    Open your browser and navigate to [http://localhost:8000](http://localhost:8000).
+
+## Usage
 
 Once the application is running:
 
-    Scan Documents: Use the built-in scanning feature to digitize physical medical records.
-    Manage Records: Create, read, update, or delete medical records as needed.
-    Secure Access: Log in with your credentials to access the system securely.
-    Real-Time Updates: Experience instant updates as you interact with the application.
+- **Scan Documents**: Use the built-in scanning feature to digitize physical medical records.
+- **Manage Records**: Create, read, update, or delete medical records as needed.
+- **Secure Access**: Log in with your credentials to access the system securely.
+- **Real-Time Updates**: Experience instant updates as you interact with the application.
 
-Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
-    Fork the Repository
+1. **Fork the Repository**
 
-    Create a Feature Branch
+2. **Create a Feature Branch**
 
-  ```bash
+    ```bash
+    git checkout -b feature/YourFeature
+    ```
 
-git checkout -b feature/YourFeature
-  ```
-Commit Your Changes
+3. **Commit Your Changes**
 
-```bash
+    ```bash
+    git commit -m "Add some feature"
+    ```
 
-git commit -m "Add some feature"
-```
-Push to the Branch
+4. **Push to the Branch**
 
-```bash
-
+    ```bash
     git push origin feature/YourFeature
-```
-    Open a Pull Request
+    ```
 
-License
+5. **Open a Pull Request**
+
+## License
 
 This project is licensed under a special License.
