@@ -148,7 +148,8 @@ This project is licensed under a special License.
 ## 📸 Demo
 ## 🌟 **Please Note**
 
-These are just demos; not all features are showcased.
+## These are just demos; not all features are showcased.
+---
 ![Highlights GIF](assets/Picture1.gif)
 ---
 ![Highlights GIF](assets/Picture2.gif)
