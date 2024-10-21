@@ -1,0 +1,62 @@
+.folder-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #343a40;
+}
+.dark-theme .container {
+    background-color: #3c3f41;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme h1 {
+    color: #ffffff;
+}
+
+.dark-theme .list-group-item {
+    background-color: #495057;
+    color: #ffffff;
+    border: 1px solid #495057;
+}
+
+.dark-theme .list-group-item a {
+    color: #ffffff;
+}
+
+.dark-theme .list-group-item:hover {
+    background-color: #5a5e61;
+}
+
+.dark-theme .folder-icon {
+    color: #ffffff;
+}

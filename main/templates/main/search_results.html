@@ -1,0 +1,58 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Search Results</h2>
+    {% if files and files|length > 0 %}
+        <ul class="list-group" id="file-list">
+            {% for file in files %}
+            <li class="list-group-item" id="file-{{ file.id }}">
+                <div class="row">
+                    <div class="col-md-2">
+                        {% if file.filename and file.filename|endswith:".jpg" %}
+                            <img src="{{ file.url }}" alt="{{ file.filename }}" class="img-thumbnail">
+                        {% elif file.filename and file.filename|endswith:".jpeg" %}
+                            <img src="{{ file.url }}" alt="{{ file.filename }}" class="img-thumbnail">
+                        {% elif file.filename and file.filename|endswith:".png" %}
+                            <img src="{{ file.url }}" alt="{{ file.filename }}" class="img-thumbnail">
+                        {% elif file.filename and file.filename|endswith:".pdf" %}
+                            <img src="{% static 'images/pdf-icon.png' %}" alt="{{ file.filename }}" class="img-thumbnail">
+                        {% else %}
+                            <img src="{% static 'images/file-icon.png' %}" alt="{{ file.filename }}" class="img-thumbnail">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-10">
+                        {% if file.is_folder %}
+                            <h3><a href="{% url 'folder_navigation' file.folder_path %}">{{ file.filename }}</a></h3>
+                        {% else %}
+                            <h3><a href="{% url 'file_detail' file.id %}">{{ file.filename }}</a></h3>
+                        {% endif %}
+                        <p><strong>Date specified: {{ file.date_specified }}</strong></p>
+                        <p>Uploaded by {{ file.username }} on {{ file.formatted_date }}</p>
+                        <p><strong>File Type:</strong> {{ file.file_type }}</p>
+                        {% if file.id %}
+                        
+                        <a href="{% url 'delete_file' file.id %}" class="btn btn-danger btn-sm mt-2 text-white delete-file" data-file-id="{{ file.id }}">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </a>
+                        <a href="{{ file.url }}" download="{{ file.filename }}" class="btn btn-primary btn-sm mt-2 ml-2 text-white">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <p id="no-results-message" style="display: none;">No search results left.</p>
+    {% else %}
+        <p id="no-results-message">No results found for your query.</p>
+    {% endif %}
+</div>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/search_results.css' %}">
+<script src="{% static 'js/search_results.js' %}"></script>
+{% endblock %}

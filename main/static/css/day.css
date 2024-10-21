@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.folder-icon {
+    font-size: 1.2rem; 
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    padding: 8px; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px; 
+    background-color: #f0f0f0; 
+}
+
+.list-group-item:hover {
+    background-color: #e0e0e0; 
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #696969; 
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+.list-group-item a:hover {
+    color: #a9a9a9; 
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 15px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #343a40;
+    font-size: 1.2rem; 
+}
+
+.img-container {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    border-radius: 5px;
+}
+
+.file-info {
+    flex: 1; 
+    margin-left: 10px; 
+}
+
+.file-info h5 {
+    margin-top: 0;
+    font-size: 1rem; 
+}
+
+.file-info p {
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem; 
+}
+
+.file-info p span {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.btn-danger {
+    font-size: 0.8rem; 
+    color: white !important; 
+}
+.dark-theme .container {
+    background-color: #3c3f41;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme h1 {
+    color: #ffffff;
+}
+
+.dark-theme .list-group-item {
+    background-color: #495057;
+    color: #ffffff;
+    border: 1px solid #495057;
+}
+
+.dark-theme .list-group-item:hover {
+    background-color: #5a5e61;
+}
+
+.dark-theme .file-info h5 a {
+    color: #ffffff;
+}
+
+.dark-theme .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}

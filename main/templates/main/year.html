@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block title %}Files for {{ year }}{% endblock %}
+{% block content %}
+{%load static%}
+<div class="container mt-5">
+    <h1 class="mb-4">Your Files for {{ year }} - Months</h1>
+    <ul class="list-group">
+        {% for month in months %}
+            <li class="list-group-item">
+                <i class="fas fa-folder folder-icon"></i>
+                <a href="{% url 'month_view' user_id=request.user.id year=year month=month.month %}">{{ month.month }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<link rel="stylesheet" type="text/css" href="{% static 'css/year.css' %}">
+{% endblock %}

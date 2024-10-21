@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block title %}Login{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{%load static%}
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <p>Don't have an account? Create one <a href="/sign_up">here</a>!</p>
+    <figcaption class="blockquote-footer">
+        Forgot your password? Click <a href="{% url 'password_reset' %}">here</a> to reset it.
+    </figcaption>
+    <button type="submit" class="btn btn-outline-primary">Login</button>
+</form>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}

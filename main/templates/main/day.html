@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Files for {{ day }} {{ month_name }} {{ year }}{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Your Files for {{ day }} {{ month_name }} {{ year }}</h1>
+    <ul class="list-group" id="file-list">
+        {% if files %}
+            {% for file in files %}
+                <li class="list-group-item" id="file-{{ file.id }}">
+                    <div class="row">
+                        <div class="col-md-3 d-flex align-items-center">
+                            <div class="img-container">
+                                {% if file.file_type == 'image' %}
+                                    <img src="{{ file.fullpath }}" alt="{{ file.basename }}" class="img-thumbnail">
+                                {% elif file.file_type == 'pdf' %}
+                                    <img src="{% static 'images/pdf-icon.png' %}" alt="{{ file.basename }}" class="img-thumbnail">
+                                {% else %}
+                                    <img src="{% static 'images/file-icon.png' %}" alt="{{ file.basename }}" class="img-thumbnail">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-9 file-info">
+                            <h5><a href="{% url 'file_view' user_id year month day file.basename %}">{{ file.friendly_name|capfirst }}</a></h5>
+                            <p><strong>Date specified:</strong> {{ year }}-{{ month }}-{{ day }}</p>
+                            <p><strong>Uploaded by:</strong> {{ file.username|capfirst }} <span>on {{ file.formatted_date }}</span></p>
+                            <p><strong>File Type:</strong> {{ file.file_type }}</p>
+                            {% if file.id %}
+                                <a href="{% url 'delete_file' file.id %}" class="btn btn-danger btn-sm mt-2 text-white delete-file" data-file-id="{{ file.id }}">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
+                                <a href="{{ file.fullpath }}" download="{{ file.basename }}" class="btn btn-primary btn-sm mt-2 ml-2 text-white">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <p id="no-results-message" style="display: none;">No photos left.</p>
+        {% else %}
+            <p id="no-results-message">No files found for this day.</p>
+        {% endif %}
+    </ul>
+</div>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/day.css' %}">
+<script src="{% static 'js/day.js' %}"></script>
+{% endblock %}

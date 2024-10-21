@@ -1,0 +1,351 @@
+:root {
+    --background-color-light: #ffffff;
+    --background-color-dark: #2d3136;
+    --card-background-color-light: #ffffff;
+    --card-background-color-dark: #343a40;
+    --card-header-background-color-light: #343a40;
+    --card-header-background-color-dark: #fafafa;
+    --card-header-text-color-light: #fff;
+    --card-header-text-color-dark: #343a40;
+    --text-color-light: #343a40;
+    --text-color-dark: #ffffff;
+    --box-shadow-light: rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    background-color: var(--background-color-light);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--box-shadow-light);
+}
+
+.card {
+    background-color: var(--card-background-color-light);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    margin: 20px auto; 
+    max-width: 600px; 
+}
+
+.card-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: var(--card-header-background-color-light); 
+    color: var(--card-header-text-color-light); 
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.25rem; 
+    font-weight: bold; 
+    box-shadow: 0 4px 8px var(--box-shadow-light); 
+}
+
+.form-control {
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif; 
+    font-size: 1rem; 
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-family: 'Arial', sans-serif; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    padding: 10px 20px; 
+    box-shadow: 0 4px #0056b3; 
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+    box-shadow: 0 4px #004085; 
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.btn-primary:active {
+    box-shadow: 0 2px #004085; 
+    transform: translateY(2px); 
+}
+
+.btn-danger {
+    font-family: 'Arial', sans-serif; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    padding: 10px 20px; 
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+.btn-danger:active {
+    transform: translateY(2px); 
+}
+
+.btn-sm {
+    padding: 5px 10px; 
+    font-size: 0.875rem; 
+}
+
+h1 {
+    color: var(--text-color-light);
+}
+
+.dark-theme .container {
+    background-color: var(--background-color-dark);
+    box-shadow: 0 4px 8px var(--box-shadow-dark);
+}
+
+.dark-theme .card {
+    background-color: var(--card-background-color-dark);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); 
+}
+
+.dark-theme .card-header {
+    background-color: var(--card-header-background-color-dark); 
+    color: var(--card-header-text-color-dark); 
+    box-shadow: 0 4px 8px var(--box-shadow-dark); 
+}
+
+.dark-theme h1 {
+    color: var(--text-color-dark);
+}
+.dark-theme .form-label {
+    color: #ffffff; 
+}
+.dark-theme .btn-primary {
+    background-color: #ffffff; 
+    color: #343a40; 
+    border-color: #ffffff; 
+    box-shadow: 0 4px #b3b3b3; 
+}
+
+.dark-theme .btn-primary:hover {
+    background-color: #e0e0e0; 
+    border-color: #e0e0e0; 
+    box-shadow: 0 4px #a6a6a6; 
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.dark-theme .btn-primary:active {
+    box-shadow: 0 2px #a6a6a6; 
+    transform: translateY(2px); 
+}
+
+#scanButton, #captureButton, #retakeButton, #cancelButton {
+    background-color: #444;
+    color: #ddd;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#scanButton:hover, #captureButton:hover, #retakeButton:hover, #cancelButton:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+
+.dark-theme #scanButton, 
+.dark-theme #captureButton, 
+.dark-theme #retakeButton, 
+.dark-theme #cancelButton {
+    background-color: #ffffff;
+    color: #343a40;
+    border: 1px solid #555;
+}
+
+.dark-theme #scanButton:hover, 
+.dark-theme #captureButton:hover, 
+.dark-theme #retakeButton:hover, 
+.dark-theme #cancelButton:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+
+#scanButton {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-theme #scanButton {
+    background-color: #ffffff;
+    color: #343a40;
+}
+
+#captureButton {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-theme #captureButton {
+    background-color: #ffffff;
+    color: #343a40;
+}
+
+#retakeButton {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-theme #retakeButton {
+    background-color: #ffffff;
+    color: #343a40;
+}
+
+#cancelButton {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-theme #cancelButton {
+    background-color: #ffffff;
+    color: #343a40;
+}
+.qr-box {
+    display: none !important;
+}
+#qr-shaded-region {
+    display: none !important;
+}
+.video-container {
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+#cameraSelect {
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 16px;
+}
+.scanner-container {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    border: 10px solid #333;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #222;
+}
+
+.decorative-element {
+    position: absolute;
+    background: #333;
+}
+
+.top-center {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.bottom-center {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.lens {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    border: 10px solid #000;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+#capturedImageContainer {
+    display: inline-block; 
+    overflow: hidden; 
+    position: relative;
+    border: 10px solid #333;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #222;
+    max-width: 100%; 
+}
+
+#capturedImage {
+    display: block; 
+    max-width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+}
+#capturePhotoButton {
+    background-color: #444;
+    color: #ddd;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#capturePhotoButton:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-theme #capturePhotoButton {
+    background-color: #ffffff;
+    color: #343a40;
+    border: 1px solid #555;
+}
+
+.dark-theme #capturePhotoButton:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}

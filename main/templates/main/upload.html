@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Upload File{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/upload.css' %}">
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            Upload File
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data" id="uploadForm">
+                {% csrf_token %}
+                <div class="mb-3" id="fileInputDiv">
+                    <label for="{{ form.file.id_for_label }}" class="form-label">{{ form.file.label }}</label>
+                    {{ form.file }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.year.id_for_label }}" class="form-label">{{ form.year.label }}</label>
+                    {{ form.year }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.month.id_for_label }}" class="form-label">{{ form.month.label }}</label>
+                    {{ form.month }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.day.id_for_label }}" class="form-label">{{ form.day.label }}</label>
+                    {{ form.day }}
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-secondary" id="scanButton">Scan Photo</button>
+                    <button type="button" class="btn btn-secondary" id="captureButton" style="display: none;">Scan And Capture Photo</button>
+                    <button type="button" class="btn btn-secondary" id="retakeButton" style="display: none;">Retake Photo</button>
+                    <button type="button" class="btn btn-secondary" id="cancelButton" style="display: none;">Cancel</button>
+                    
+                    <button type="button" class="btn btn-secondary" id="capturePhotoButton" style="display: none;">Capture Photo</button>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="cameraSelect" class="form-label" style="display: none;">Select Camera</label>
+                    <select id="cameraSelect" class="form-select custom-select" style="display: none;"></select>
+                </div>
+                <div id="scanner-container" class="scanner-container" style="display: none;">
+                    
+                    <div class="decorative-element top-center"></div>
+                    <div class="decorative-element top-right"></div>
+                    <div class="decorative-element top-left"></div>
+                    <div class="decorative-element bottom-center"></div>
+                    
+                    <div class="lens">
+                        
+                        <div class="video-container">
+                            <video muted="true" playsinline=""></video>
+                        </div>
+                    </div>
+                </div>
+                <canvas id="captureCanvas" style="display: none; width: 100%; height: auto;"></canvas>
+                <div id="capturedImageContainer" style="display: none;">
+                    <img id="capturedImage" style="display: none;" />
+                </div>
+                
+                <div id="qr-output" class="alert alert-success mt-3" style="display: none;"></div>
+                <div class="mt-2 mb-3">
+                    <button type="button" class="btn btn-primary w-100" onclick="validateAndUpload()">Upload</button>
+                </div>
+                
+                <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script async src="https://docs.opencv.org/4.x/opencv.js" type="text/javascript"></script>
+
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+<script src="{% static 'js/upload.js' %}" type="text/javascript"></script>
+{% endblock %}

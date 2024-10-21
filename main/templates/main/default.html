@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Welcome to Dosar Medical{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="medical-records-animation"></div>
+    <h1 class="mb-4">Welcome to your "Dosar Medical"</h1>
+    <p class="lead">Your trusted platform for uploading and managing your files by date. Sign up today to start organizing your documents effortlessly.</p>
+    <div class="mt-4">
+        <a href="{% url 'sign_up' %}" class="btn btn-primary btn-lg me-2">Sign Up</a>
+        <a href="{% url 'login_user' %}" class="btn btn-outline-secondary btn-lg">Login</a>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+{% endblock %}
